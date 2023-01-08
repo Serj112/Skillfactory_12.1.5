@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Skillfactory_12._1._5;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 
-static class Program
+class Program: User
 {
     static void ShowAds()
     {
@@ -23,8 +24,21 @@ static class Program
     }
     static void Main(string[] args)
     {
-        string name = new Name;
+        User user = new User();
+
+        Console.WriteLine("Введите имя");
+        user.Name = Console.ReadLine();
+        Console.WriteLine("Введите логин");
+        user.Login = Console.ReadLine();
+        Console.WriteLine("Является ли аккаунт премиальным? True/False");
+        user.IsPremium = bool.Parse(Console.ReadLine());
+
+        if (!user.IsPremium)
+        {
+            ShowAds();
+        }
+
+        Console.WriteLine("Привет, " + user.Name);
     }
-    dff
 }
 
